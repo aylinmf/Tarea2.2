@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Convertidor="clr-namespace:EjercicioA2_2.Convertidor"
+             x:Class="PM2P2_T2.View.ListPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+          
+
+            <ListView x:Name="list" 
+                      HasUnevenRows="True"
+                      ItemTapped="list_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid Padding="10">
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding ArrayByteImage, Converter={StaticResource ByteToImage}}" 
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Fill"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
+                                   Grid.Column="0"
+                                   Background="#F8F8F8"
+                                   
+                                   />
+
+                                <StackLayout Grid.Column="1">
+                                    <Grid>
+                                        <Label Grid.Row="0"
+                                       Text="{Binding Nombre}"
+                                       FontAttributes="Bold" />
+
+                                        <Label Grid.Row="1"
+                                       Text="{Binding Descripcion}"
+                                       />
+                                    </Grid>
+                                </StackLayout>
+
+                            </Grid>
+                            
+                            
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

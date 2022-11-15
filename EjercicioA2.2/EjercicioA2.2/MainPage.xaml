@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls ="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="EjercicioA2._2.MainPage"
+             Visual="Material">
+    
+    
+    <StackLayout>
+
+        <Frame  >
+        
+    </Frame>
+
+    <controls:SignaturePadView x:Name="Pantalla" StrokeWidth="2" Margin="0,50,0,0" WidthRequest="380" HeightRequest="350" StrokeColor="#6F6F6F" HorizontalOptions="Center" VerticalOptions="Start"
+                                   />
+
+        <Entry x:Name="txtNombre" Keyboard="Text" Placeholder="Eje: Nombre" Margin="0,40,20,0"
+               />
+
+        <Entry x:Name="txtDescription" Keyboard="Text" Placeholder="Eje: Descripcion" Margin="0,20,20,0"
+               
+               />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,65,0,0">
+            <Button x:Name="buttonlista"  Text="FIRMAS REGISTRADAS" HorizontalOptions="StartAndExpand" Clicked="buttonlista_Clicked" BackgroundColor="Fuchsia" TextColor="Black" />
+
+            <Button Text="GUARDAR" HorizontalOptions="EndAndExpand" Clicked="Button_Clicked_1" BackgroundColor="Fuchsia"  TextColor="Black"/>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
